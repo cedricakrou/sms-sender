@@ -8,32 +8,9 @@ object SendSmsBootstrap {
 
     fun seed( iSmsService: ISmsService ) {
 
-        val listContacts : MutableList<Contact> = mutableListOf(
+        var listContacts : MutableList<Contact> = mutableListOf()
 
-
-            Contact(
-                firstName = "",
-                lastName = "",
-                phoneNumber = "0708483575"
-            ),
-            Contact(
-                firstName = "",
-                lastName = "",
-                phoneNumber = "0707461281"
-            ),
-            Contact(
-                firstName = "",
-                lastName = "",
-                phoneNumber = "0749300265"
-            ),
-            Contact(
-                firstName = "",
-                lastName = "",
-                phoneNumber = "0767626349"
-            )
-
-        )
-
+        listContacts =  ExcelReader.reader()
 
         listContacts.forEach {
 
